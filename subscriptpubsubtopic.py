@@ -14,12 +14,14 @@ subscriber = pubsub_v1.SubscriberClient.from_service_account_file(service_accoun
 topic_path = f"projects/{project_id}/topics/{topic_id}"
 subscription_path = f"projects/{project_id}/subscriptions/{subscription_id}"
 
+"""
 # Create the subscription (if it doesn't already exist)
 try:
     subscriber.create_subscription(name=subscription_path, topic=topic_path)
     print(f"Subscription {subscription_id} created.")
 except AlreadyExists:
     print(f"Subscription {subscription_id} already exists.")
+"""
 
 # Pull messages from the subscription
 def callback(message):
